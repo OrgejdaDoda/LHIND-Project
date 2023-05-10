@@ -27,13 +27,17 @@ public class BookingPage {
 
     public void setPassengerInfo(DataTable dataTable) {
 
-        try {
-            basePageObject
-                    .getWaitUtils()
-                    .waitForAllElementsToBeVisible(bookingPageElements.firstNameFields);
-        } catch (TimeoutException e) {
+//        try {
+//            basePageObject
+//                    .getWaitUtils()
+//                    .waitForAllElementsToBeVisible(bookingPageElements.firstNameFields);
+//        } catch (TimeoutException e) {
+//
+//        }
 
-        }
+        basePageObject
+                .getWaitUtils()
+                .waitForAllElementsToBeVisible(bookingPageElements.firstNameFields);
 
         List<Map<String, String>> passengerData = dataTable.asMaps(String.class, String.class);
         int index = 0;

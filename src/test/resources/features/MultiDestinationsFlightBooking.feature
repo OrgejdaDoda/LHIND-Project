@@ -57,7 +57,7 @@ Feature: Booking Multi Leg Flight
       | 2             | 8 | 8 |
 
     Then I click on the search button
-    And I select a hotel cheaper then "3500" per night and cheaper then "25000" total
+    And I select a hotel cheaper then "3500" per night and cheaper then "25000" total for 7 nights
     And I set custom field
     And I click the agree checkbox
     And I click the confirm button

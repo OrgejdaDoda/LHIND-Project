@@ -111,11 +111,11 @@ public class MultiDestinationsFlightBooking {
     }
 
 
-    @And("I select a hotel cheaper then {string} per night and cheaper then {string} total")
+    @And("I select a hotel cheaper then {string} per night and cheaper then {string} total for {int} nights")
 
-    public void iSelectHotel(String pricePerNight, String totalPrice) {
+    public void iSelectHotel(String pricePerNight, String totalPrice, int noOfNights) {
 
-        hotelTravelPage.selectHotel(pricePerNight, totalPrice);
+        hotelTravelPage.selectHotel(pricePerNight, totalPrice, noOfNights);
 
     }
 

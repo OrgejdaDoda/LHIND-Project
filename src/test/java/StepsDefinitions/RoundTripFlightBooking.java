@@ -69,6 +69,7 @@ public class RoundTripFlightBooking {
     @And("I enter the following card information")
 
     public void iSetCustomField(DataTable dataTable) {
+
         bookingPage.setCreditCardInfo(dataTable);
 
     }

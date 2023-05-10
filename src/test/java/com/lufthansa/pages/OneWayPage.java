@@ -61,16 +61,8 @@ public class OneWayPage {
                 break;
 
             case "hours":
-
-                try {
-                    Thread.sleep(3000);
                     componentsUtils.selectOption(carTravelPageElements.dropdown1, param);
-                    Thread.sleep(3000);
                     componentsUtils.selectOption(carTravelPageElements.dropdown2, param);
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
                 break;
         }
         System.out.println("Selected " + param + " " + intent);
@@ -83,7 +75,7 @@ public class OneWayPage {
 
     public void selectRandomDepartureDate(int month, String unit) {
 
-        componentsUtils.selectRandomDate(oneWayPageElements.departureDateField, month, "month", 0);
+        componentsUtils.selectRandomDate(oneWayPageElements.departureDateField, month, unit, 0);
     }
 
 

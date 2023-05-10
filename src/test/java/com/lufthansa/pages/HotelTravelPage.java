@@ -70,7 +70,7 @@ public class HotelTravelPage {
 
     }
 
-    public void selectHotel(String pricePerNight, String totalPrice) {
+    public void selectHotel(String pricePerNight, String totalPrice, int noOfNights) {
 
         basePageObject
                 .getWaitUtils()
@@ -81,7 +81,7 @@ public class HotelTravelPage {
 
             double price = Double.parseDouble(priceText.replaceAll("[^0-9.]", ""));
 
-            if (price < Integer.parseInt(pricePerNight) && price * 7 < Integer.parseInt(totalPrice)) {
+            if (price < Integer.parseInt(pricePerNight) && price * noOfNights < Integer.parseInt(totalPrice)) {
                 WebElement hotelElement = priceElement.findElement(By.xpath(".."));
                 WebElement selectButton = hotelElement.findElement(By.className("select-button"));
                 selectButton.click();

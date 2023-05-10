@@ -1,6 +1,9 @@
 package com.lufthansa.utilities;
 
-import com.lufthansa.elements.*;
+import com.lufthansa.elements.FlightDetailsPageElements;
+import com.lufthansa.elements.HotelTravelPageElements;
+import com.lufthansa.elements.MultiDestinationsPageElements;
+import com.lufthansa.elements.OneWayPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -160,10 +163,10 @@ public class ComponentsUtils {
 
         String dateToSelect = "";
 
-        if (intent.equalsIgnoreCase("Check In")){
+        if (intent.equalsIgnoreCase("Check In")) {
             hotelTravelPageElements.checkInDateField.click();
             dateToSelect = this.chosenArrivalDate;
-        }else {
+        } else {
             hotelTravelPageElements.checkOutDateField.click();
             dateToSelect = this.chosenDepartureDate;
         }
@@ -252,13 +255,12 @@ public class ComponentsUtils {
 
         } else if (unit.equalsIgnoreCase("days")) {
             String departureDate = "";
-            if (flightNo==2) {
+            if (flightNo == 2) {
                 departureDate = multiDestinationsPageElements.departureDateField.get(0).getAttribute("value");
-            }
-            else if (flightNo==3){
-                    departureDate = multiDestinationsPageElements.departureDateField.get(1).getAttribute("value");
-                    this.chosenArrivalDate = departureDate;
-            }else {
+            } else if (flightNo == 3) {
+                departureDate = multiDestinationsPageElements.departureDateField.get(1).getAttribute("value");
+                this.chosenArrivalDate = departureDate;
+            } else {
                 departureDate = oneWayPageElements.departureDateField.getAttribute("value");
             }
             LocalDate selectedDate = LocalDate.parse(departureDate, DateTimeFormatter.ofPattern("M/d/yyyy"));
